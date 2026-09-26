@@ -220,3 +220,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# research pipeline: local-only data and machine-specific paths
+research/data_out/
+research/config/paths.json
