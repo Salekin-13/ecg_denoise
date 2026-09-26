@@ -1,0 +1,11 @@
+{
+  "_comment": "Copy to paths.json and edit. Relative paths start at the repo root (ecg_denoise/). Records are searched recursively, so pointing at a parent folder is fine. Leave a value empty (\"\") to skip a dataset.",
+  "mitdb": "datasets/mit-bih-arrhythmia-database-1.0.0",
+  "nstdb": "datasets/nstdb",
+  "qtdb": "datasets/qtdb_cache",
+  "ptbxl": "datasets/ptbxl",
+  "ptbxl_plus": "datasets/PTBXL_plus",
+  "simemg": "datasets/SimEMG_database",
+  "wear": "datasets/wear",
+  "medalcare": "datasets/MedalCare-XL"
+}
