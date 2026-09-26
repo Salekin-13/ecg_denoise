@@ -69,6 +69,10 @@ Scores are 1–5, where 5 is best. **Novelty** is the reconciled view (the lower
 
 > **Under which combinations of artifact type, artifact severity (including clean input), downstream task, and downstream-model adaptation does ECG denoising improve, leave unchanged, or degrade analysis relative to raw ECG — and does a signal-quality-gated *selective* denoiser dominate both "always denoise" and "never denoise"?**
 
+> **Sanity-check update (see `Research_Plan.md`, Part A).** The Seo 2026 "still-missing downstream denoising ablation under a fixed classifier" wording is confirmed. However:
+> - It covers only one slice (raw vs cleaned input on one fixed classifier), and Seo's group has announced they will do it next. Claim novelty only for the full factorial, not for that slice.
+> - Add Cardio-NAFNet (medRxiv 2022), Memory Classifiers (2023) and the Sci Rep 2026 QRS benchmark to the novelty matrix.
+
 **Why this is the most feasible and publishable choice:**
 1. **Both reviews converge on it.** It is the SLR's top pick, and the Audit keeps its factorial core as surviving opportunity #1.
 2. **The gap is stated by prior authors.** Seo 2026 calls the fixed-classifier ablation "still-missing", and Granese, Bender and SHTI 2026 disagree in ways that only an adaptation factor can reconcile (Audit §10.3). You extend published results instead of claiming a vacuum, which reviewers accept more readily.
