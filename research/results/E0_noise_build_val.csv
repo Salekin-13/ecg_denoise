@@ -1,0 +1,3 @@
+dataset,split,fs,windows,records,noisy_signals,max_snr_error_db
+mitdb,val,360,720,4,14400,7.105427357601002e-15
+qtdb,val,250,1698,19,33960,7.105427357601002e-15

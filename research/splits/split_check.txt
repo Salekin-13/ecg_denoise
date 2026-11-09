@@ -1,0 +1,7 @@
+seed=0
+PASS: 133 patient groups, each in exactly one split (checked across MIT-BIH and QTDB together).
+PASS: noise 'bw' train/val/test ranges do not overlap
+PASS: noise 'em' train/val/test ranges do not overlap
+PASS: noise 'ma' train/val/test ranges do not overlap
+mitdb: {'test': '21 records / 21 patients', 'train': '19 records / 18 patients', 'val': '4 records / 4 patients'}
+qtdb: {'test': '27 records / 27 patients', 'train': '57 records / 57 patients', 'val': '19 records / 19 patients'}
