@@ -1,8 +1,15 @@
-# Research pipeline: Steps 2–4
+# Research pipeline: Steps 2–4 (+ Step 5 preview)
+
+> **Status 2026-11-09:** Steps 2–4 have been run on MIT-BIH, NSTDB and QTDB (PTB-XL not yet); outputs are committed. See `STATUS.md`.
 
 These scripts implement Steps 2, 3 and 4 of `../Research_Plan.md`. Run them **on the computer that holds the datasets**. They write small outputs (tables, split lists, recipes, figures, log entries) into this folder, so you can commit and push them for review. Large arrays go to `research/data_out/`, which git ignores.
 
 ## One-time setup
+
+No local copies yet? The three PhysioNet sets download in ~5 min:
+```
+python -c "import wfdb; wfdb.dl_database('nstdb','datasets/nstdb'); wfdb.dl_database('qtdb','datasets/qtdb_cache'); wfdb.dl_database('mitdb','datasets/mit-bih-arrhythmia-database-1.0.0')"
+```
 
 1. **Unzip what is still zipped** inside `datasets/`:
    - `mit-bih-arrhythmia-database-1.0.0.zip`: required, because Steps 3 and 4 read the MIT-BIH records;
@@ -27,6 +34,7 @@ These scripts implement Steps 2, 3 and 4 of `../Research_Plan.md`. Run them **on
 | 3 — fair splits | `python research/scripts/step3_splits.py` | seconds | `research/splits/split_check.txt` (must say PASS) |
 | 4 — noisy test set | `python research/scripts/step4_make_noisy.py` | ~5–20 min (PTB-XL is the slow part) | `research/figures/noise_examples/*.png`, `research/results/E0_noise_build_test.csv` |
 | 4 — noisy val set | `python research/scripts/step4_make_noisy.py --split val` | same | same |
+| 5 preview — standard filter | `python research/scripts/step5_preview_filter.py --dataset mitdb` | ~1 min | `research/figures/E1_preview_filter_mitdb.png`, `research/results/E1_preview_filter_mitdb.csv` |
 
 Useful options for Step 4:
 - `--datasets mitdb qtdb`: skip PTB-XL for a quick first run.
