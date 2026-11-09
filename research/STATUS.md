@@ -19,11 +19,11 @@ Where the code side stands relative to `../Research_Plan.md`. Step 1 (novelty re
 | 12 dB | −0.6 | −1.3 | −2.5 | −1.7 |
 | 24 dB | −12.5 | −12.6 | −12.7 | −12.6 |
 
-- The filter **helps** below roughly 10 dB input SNR and **hurts** above it. The crossover is around 6–12 dB for every noise type. Output SNR saturates near 11–13 dB regardless of input.
-- On already-clean input the filter changes 98% of windows by more than 10% RMS (median output SNR vs original ≈ 11.5 dB). This is the direction prediction **P3** expects, but see the caveat.
-- Baseline wander (bw) is the easiest noise for this filter; muscle artefact (em) the hardest, as expected since it overlaps the QRS band.
+- Below about 6 dB input SNR the filter clearly **helps**; the gain is largest for bw and smallest for em (electrode motion, which overlaps the QRS band). ma = muscle artefact.
+- Above about 12 dB the measured output SNR is *lower* than the input, by the same amount for every noise type. This is **not** evidence that the filter hurts: see the caveat.
+- On already-clean input the filter output sits at a median 11.5 dB (mitdb) / 13.4 dB (qtdb) SNR against the original. Per-record medians range from about 4 to 18 dB (mitdb).
 
-**Caveat (logged in `experiment_log.md`):** the MIT-BIH/QTDB "clean" references themselves contain baseline wander below 0.5 Hz and content above 40 Hz. Part of the measured "change on clean input" is the filter removing real reference content. Step 5 proper needs either an in-band metric or a cleaner reference before P3 can be claimed from this cleaner.
+**Caveat (worked through in `notebooks/01_results_steps2to5.ipynb`, logged in `experiment_log.md`):** the filter is linear, so error = (Hx - x) + Hn. The first term, what the filter does to the "clean" reference itself, caps the output SNR at about 11.5 / 13.4 dB and dominates the error at every input SNR of 12 dB and above (and at all levels for bw). About 58% of that removed power is the reference's own baseline wander below 0.5 Hz, about 29% is in-band attenuation. On top of that, filtering 10 s windows adds a start-up transient (edge error about 2.5x the middle), and the 60 Hz notch misses the 50 Hz mains in the QTDB `sele*` records. So the high-SNR "loss" and the clean-input change cannot be read as support for P3 yet. Step 5 proper needs: an in-band metric (or cleaner reference), filtering of whole records before windowing, per-record mains frequency, and per-record aggregation (300 windows from 21 records are not 300 samples).
 
 ## Next
 1. Finish Step 1 reading table → Decision D1.
