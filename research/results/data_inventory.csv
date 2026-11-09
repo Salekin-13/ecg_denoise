@@ -1,0 +1,42 @@
+dataset,item,value
+mitdb,status,found
+mitdb,path,/home/user/ecg_denoise/datasets/mit-bih-arrhythmia-database-1.0.0
+mitdb,file_types,".atr:48, .hea:48, .dat:48"
+mitdb,wfdb_records,48
+mitdb,sampling_rates_hz,{360: 48}
+mitdb,n_channels,{2: 48}
+mitdb,channel_names_top,"MLII, V1, V5, V2, V4"
+mitdb,duration_sec_min/median/max,1805.6 / 1805.6 / 1805.6
+mitdb,total_hours,24.07
+mitdb,records_with_.atr (reference beat labels),48
+mitdb,total_labelled_beats,109494
+mitdb,record_names,100 101 102 103 104 105 106 107 108 109 111 112 113 114 115 116 117 118 119 121 122 123 124 200 201 202 203 205 207 208 209 210 212 213 214 215 217 219 220 221 222 223 228 230 231 232 233 234
+nstdb,status,found
+nstdb,path,/home/user/ecg_denoise/datasets/nstdb
+nstdb,file_types,".hea:15, .dat:15, .atr:12"
+nstdb,wfdb_records,15
+nstdb,sampling_rates_hz,{360: 15}
+nstdb,n_channels,{2: 15}
+nstdb,channel_names_top,"MLII, V1, noise1, noise2"
+nstdb,duration_sec_min/median/max,1805.6 / 1805.6 / 1805.6
+nstdb,total_hours,7.52
+nstdb,records_with_.atr (reference beat labels),12
+nstdb,noise_bw,"present, 30.1 min @ 360 Hz, 2 ch"
+nstdb,noise_ma,"present, 30.1 min @ 360 Hz, 2 ch"
+nstdb,noise_em,"present, 30.1 min @ 360 Hz, 2 ch"
+qtdb,status,found
+qtdb,path,/home/user/ecg_denoise/datasets/qtdb_cache
+qtdb,file_types,".pu0:105, .man:105, .hea:105, .dat:105, .pu1:105, .pu:105, .qt1:105, .q1c:105, .atr:82, .q2c:11, .qt2:11"
+qtdb,wfdb_records,105
+qtdb,sampling_rates_hz,{250: 105}
+qtdb,n_channels,{2: 105}
+qtdb,channel_names_top,"ECG1, ECG2, D3, MLII, V4, CM5, V1, V5, CC5, V2, V3, ML5"
+qtdb,duration_sec_min/median/max,900.0 / 900.0 / 900.0
+qtdb,total_hours,26.25
+qtdb,records_with_.atr (reference beat labels),82
+qtdb,records_with_.q1c (manual wave boundaries (cardiologist 1)),105
+qtdb,records_with_.q2c (manual wave boundaries (cardiologist 2)),11
+qtdb,records_with_.pu (automatic wave boundaries),105
+qtdb,records_with_.pu0 (automatic wave boundaries ch0),105
+qtdb,records_with_.pu1 (automatic wave boundaries ch1),105
+qtdb,records_with_.man (manual beat annotations),105
